@@ -10,11 +10,9 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private bool Check(double a, double b, double c)
+        private void AddToLog(double firstValue, double secondValue, double thirdValue, string result)
         {
-            if ((a < b + c) && (b < a + c) && (c < a + b))
-                return true;
-            return false;
+            listBox1.Items.Add(firstValue + " " + secondValue + " " + thirdValue + " " + result);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,17 +23,18 @@ namespace WindowsFormsApplication1
             secondValue = (double)numericUpDown2.Value;
             thirdValue  = (double)numericUpDown3.Value;
 
-            if (Check(firstValue, secondValue, thirdValue))
-                if (firstValue == secondValue && firstValue == thirdValue && secondValue == thirdValue)
-                    label5.Text = "Треугольник равносторонний";
-                else if (firstValue == secondValue || firstValue == thirdValue || secondValue == thirdValue)
-                    label5.Text = "Треугольник равнобедренный";
-                else
-                    label5.Text = "Треугольник неравносторонний";
-            else
-                label5.Text = "Треугольник не существует";
-
-            listBox1.Items.Add(numericUpDown1.Value + " " + numericUpDown2.Value + " " + numericUpDown3.Value + " " + label5.Text);  
+            try
+            {
+                var t = new Triangle(firstValue, secondValue, thirdValue);
+                label5.Text = t.Type;
+            }
+            catch (TriangleException ex)
+            {
+                MessageBox.Show(ex.message);
+                label5.Text = ex.message;
+            }
+            
+            AddToLog(firstValue, secondValue, thirdValue, label5.Text);  
         }
     }
 }

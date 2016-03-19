@@ -85,8 +85,8 @@
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(77, 41);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            -1,
-            2147483647,
+            -1981284352,
+            -1966660860,
             0,
             0});
             this.numericUpDown1.Minimum = new decimal(new int[] {
@@ -108,8 +108,8 @@
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(77, 70);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            -1,
-            2147483647,
+            -1981284352,
+            -1966660860,
             0,
             0});
             this.numericUpDown2.Minimum = new decimal(new int[] {
@@ -131,8 +131,8 @@
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(77, 99);
             this.numericUpDown3.Maximum = new decimal(new int[] {
-            -1,
-            2147483647,
+            -1981284352,
+            -1966660860,
             0,
             0});
             this.numericUpDown3.Minimum = new decimal(new int[] {

@@ -11,19 +11,29 @@ namespace UnitTestProject1
         [TestMethod]
         public void Positive_Inequilateral()
         {
+            var t = new Triangle(17, 12, 13);
+
+            Assert.AreEqual("Треугольник неравносторонний", t.Type);
         }
         [TestMethod]
         public void Negative_Inequilateral()
         {
+            var t = new Triangle(1, 1, 1);
+
+            Assert.AreEqual("Треугольник равносторонний", t.Type);
         }
 
-        [TestMethod]
+        [TestMethod][ExpectedException(typeof(TriangleException))]
         public void Positive_NonexistentInequilateral()
         {
+            var t = new Triangle(1, 2, 3);
         }
         [TestMethod]
         public void Negative_NonexistentInequilateral()
         {
+            var t = new Triangle(17, 12, 13);
+
+            Assert.AreEqual("Треугольник неравносторонний", t.Type);
         }
         #endregion 
 
@@ -31,10 +41,16 @@ namespace UnitTestProject1
         [TestMethod]
         public void Positive_Equilateral()
         {
+            var t = new Triangle(1, 1, 1);
+
+            Assert.AreEqual("Треугольник равносторонний", t.Type);
         }
         [TestMethod]
         public void Negative_Equilateral()
         {
+            var t = new Triangle(17, 12, 13);
+
+            Assert.AreEqual("Треугольник неравносторонний", t.Type);
         }
         #endregion 
 
@@ -221,9 +237,7 @@ namespace UnitTestProject1
 
         #region Separator 
         [TestMethod]
-        public void o_____________________________________o()
-        {
-        }
+        public void o_____________________________________o() { }
         #endregion
     }
 }
