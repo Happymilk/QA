@@ -103,6 +103,7 @@
             0,
             0,
             0});
+            this.numericUpDown1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.numericUpDown1_MouseDoubleClick);
             // 
             // numericUpDown2
             // 
@@ -126,6 +127,7 @@
             0,
             0,
             0});
+            this.numericUpDown2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.numericUpDown2_MouseDoubleClick);
             // 
             // numericUpDown3
             // 
@@ -149,6 +151,7 @@
             0,
             0,
             0});
+            this.numericUpDown3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.numericUpDown3_MouseDoubleClick);
             // 
             // label5
             // 
