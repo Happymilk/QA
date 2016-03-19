@@ -38,11 +38,12 @@ namespace WindowsFormsApplication1
             try
             {
                 var t = new Triangle(firstValue, secondValue, thirdValue);
+                MessageBox.Show(t.Type, "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 label5.Text = t.Type;
             }
             catch (TriangleException ex)
             {
-                MessageBox.Show(ex.message);
+                MessageBox.Show(ex.message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);              
                 label5.Text = ex.message;
             }
             
