@@ -10,18 +10,28 @@ namespace WindowsFormsApplication1
         public string Type { get; set; }
         public bool Exist { set; get; }
 
-        public Triangle(params double[] values)
+        public Triangle(params dynamic[] values)
         {
+            double first, second, third;
+            bool f, s, t;
+
             if (values.Length != 3)
                 throw new TriangleException("Значений должно быть 3");
-            if (values[0] <= 0 || values[1] <= 0 || values[2] <= 0)
+            
+            f = Double.TryParse(values[0], out first);
+            s = Double.TryParse(values[1], out second);
+            t = Double.TryParse(values[2], out third);
+
+            if (!f || !s || !t)
+                throw new TriangleException("Неверный ввод (символьные значения)");
+            if (first <= 0 || second <= 0 || third <= 0)
                 throw new TriangleException("Все значения должны быть строго больше 0");
-            if ((values[0] > Double.MaxValue || values[1] > Double.MaxValue || values[2] > Double.MaxValue))
+            if ((first > Double.MaxValue || second > Double.MaxValue || third > Double.MaxValue))
                 throw new TriangleException("Все значения должны быть строго меньше 10000000000000000000");
 
-            this.a = values[0];
-            this.b = values[1];
-            this.c = values[2];
+            this.a = first;
+            this.b = second;
+            this.c = third;
             this.Exist = CheckExisting();
             this.Type = GetTypeOfTriangle(); 
         }

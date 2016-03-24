@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -48,6 +49,31 @@ namespace WindowsFormsApplication1
             }
             
             AddToLog(firstValue, secondValue, thirdValue, label5.Text);  
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var reader = new StreamReader("test.txt");
+            var writer = new StreamWriter("result.txt");
+
+            while (!reader.EndOfStream)
+            {
+                var s = reader.ReadLine();
+                var col = s.Split(' ');
+
+                try
+                {
+                    var t = new Triangle(col[0], col[1], col[2]);
+                    writer.WriteLine(col[0] + " " + col[1] + " " + col[2] + " " + t.Type);
+                }
+                catch (TriangleException ex)
+                {
+                    writer.WriteLine(col[0] + " " + col[1] + " " + col[2] + " " + ex.message);
+                }
+            }
+            reader.Dispose();
+            writer.Dispose();
+            MessageBox.Show("Готово", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

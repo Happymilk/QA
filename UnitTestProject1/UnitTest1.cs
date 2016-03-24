@@ -160,7 +160,7 @@ namespace UnitTestProject1
         }
         #endregion
 
-        #region Values 
+        #region Values
         [TestMethod][ExpectedException(typeof(TriangleException))]
         public void Negative_NullValue()
         {
@@ -255,7 +255,7 @@ namespace UnitTestProject1
         }
         #endregion
 
-        #region Separator 
+        #region Separator
         [TestMethod]
         public void o_____________________________________o() { }
         #endregion
