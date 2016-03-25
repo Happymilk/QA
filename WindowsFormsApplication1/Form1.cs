@@ -12,15 +12,15 @@ namespace WindowsFormsApplication1
         }
         private void numericUpDown1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            numericUpDown1.Value = 10000000000000000000;
+            numericUpDown1.Value = 1000000000;
         }
         private void numericUpDown2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            numericUpDown2.Value = 10000000000000000000;
+            numericUpDown2.Value = 1000000000;
         }
         private void numericUpDown3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            numericUpDown3.Value = 10000000000000000000;
+            numericUpDown3.Value = 1000000000;
         }
 
         private void AddToLog(double firstValue, double secondValue, double thirdValue, string result)

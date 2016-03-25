@@ -235,7 +235,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void Positive_MaxBorder()
         {
-            var t = new Triangle(10000000000000000000, 5000000000000000000, 6000000000000000000);
+            var t = new Triangle(1000000000, 500000000, 600000000);
         }
         [TestMethod][ExpectedException(typeof(TriangleException))]
         public void Negative_MaxBorder()
